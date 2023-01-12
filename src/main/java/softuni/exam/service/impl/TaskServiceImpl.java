@@ -30,26 +30,20 @@ public class TaskServiceImpl implements TaskService {
     public static final String TASKS_FILE_PATH = "src/main/resources/files/xml/tasks.xml";
 
     private final TaskRepository taskRepository;
-    private final CarService carService;
     private final CarRepository carRepository;
     private final MechanicService mechanicService;
-    private final MechanicRepository mechanicRepository;
-    private final PartService partService;
     private final PartRepository partRepository;
     private final XmlParser xmlParser;
     private final ModelMapper modelMapper;
     private final ValidationUtil validationUtil;
 
-    public TaskServiceImpl(TaskRepository taskRepository, CarService carService,
+    public TaskServiceImpl(TaskRepository taskRepository,
                            CarRepository carRepository, MechanicService mechanicService, MechanicRepository mechanicRepository, PartService partService,
                            PartRepository partRepository, XmlParser xmlParser, ModelMapper modelMapper,
                            ValidationUtil validationUtil) {
         this.taskRepository = taskRepository;
-        this.carService = carService;
         this.carRepository = carRepository;
         this.mechanicService = mechanicService;
-        this.mechanicRepository = mechanicRepository;
-        this.partService = partService;
         this.partRepository = partRepository;
         this.xmlParser = xmlParser;
         this.modelMapper = modelMapper;
