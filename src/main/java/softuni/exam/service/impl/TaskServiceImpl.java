@@ -3,22 +3,16 @@ package softuni.exam.service.impl;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import softuni.exam.models.dto.taskDTOs.ImportTaskRootDTO;
-import softuni.exam.models.entity.Car;
-import softuni.exam.models.entity.CarType;
 import softuni.exam.models.entity.Task;
 import softuni.exam.repository.CarRepository;
-import softuni.exam.repository.MechanicRepository;
 import softuni.exam.repository.PartRepository;
 import softuni.exam.repository.TaskRepository;
-import softuni.exam.service.CarService;
 import softuni.exam.service.MechanicService;
-import softuni.exam.service.PartService;
 import softuni.exam.service.TaskService;
 import softuni.exam.util.ValidationUtil;
 import softuni.exam.util.XmlParser;
 
 import javax.xml.bind.JAXBException;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -38,7 +32,7 @@ public class TaskServiceImpl implements TaskService {
     private final ValidationUtil validationUtil;
 
     public TaskServiceImpl(TaskRepository taskRepository,
-                           CarRepository carRepository, MechanicService mechanicService, MechanicRepository mechanicRepository, PartService partService,
+                           CarRepository carRepository, MechanicService mechanicService,
                            PartRepository partRepository, XmlParser xmlParser, ModelMapper modelMapper,
                            ValidationUtil validationUtil) {
         this.taskRepository = taskRepository;
